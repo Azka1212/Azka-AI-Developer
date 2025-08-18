@@ -74,10 +74,11 @@ export default function Portfolio() {
   }
 
   const skills = {
-    technical: ["Python", "Swift", "Objective-C", "Django", "Bash"],
-    aiml: ["PyTorch", "TensorFlow", "Hugging Face Transformers", "OpenCV", "Stable Diffusion", "PoseNet"],
-    cloud: ["AWS (EC2, Lambda, S3)", "Google Cloud Platform", "Docker", "CI/CD Pipelines", "RESTful APIs"],
-    tools: ["Google Analytics", "Unity", "Blender", "FastAPI"],
+    technical: ["Prompt engineering & function/tool calling","Agentic workflows (LangGraph/LangChain)","Planning & tool routing","Fine-tuning/LoRA","Distillation/quantization (GGUF, bitsandbytes)","Context caching & batching","Python", "Swift", "Objective-C", "Django", "Bash"],
+    aiml: ["PyTorch", "TensorFlow", "Hugging Face Transformers", "OpenCV", "Stable Diffusion", "PoseNet","RAG pipelines (chunking, hybrid search)","Vector DBs (FAISS, pgvector, Pinecone, Weaviate)","Reranking (bge-reranker, ColBERT)", "Document loaders & indexing","Query expansion & multi-step retrieval","Hallucination/groundedness checks","Stable Diffusion/ControlNet","OpenCV & image pipelines","CLIP/BLIP/ViT","Pose/landmark estimation","Whisper/Speech-to-text",
+    "Multimodal RAG",],
+    cloud: ["AWS (EC2, Lambda, S3)", "Google Cloud Platform", "CI/CD Pipelines", "RESTful APIs","FastAPI/ASGI, gRPC","vLLM/ONNX/TensorRT-LLM serving","Ray/Modal/Azure/GCP deploy","Docker, Terraform, Helm","CI/CD (GitHub Actions)","Feature flags & canary releases",],
+    tools: ["Google Analytics","Offline/online evals (accuracy, groundedness)","A/B testing, regression suites","Tracing/telemetry (LangSmith, Phoenix)","Prompt injection/PII mitigation (OWASP LLM)","Policy/guardrails & safety filters","Cost/latency profiling & caching (Redis)",],
     soft: ["Team Leadership", "Remote Collaboration", "Technical Training", "Communication"],
   }
 
@@ -97,12 +98,12 @@ export default function Portfolio() {
       projects: ["Adversarial Robustness Evaluation Tool", "Cloud-Scalable Security Framework"],
       links: [
         { name: "Gachon University", url: "https://www.gachon.ac.kr/kor/index.jsp" },
-        { name: "GitHub Profile", url: "https://github.com/Azka1212" },
+        { name: "Lab website", url: "https://ai-security.github.io/professor_main_e.htm" },
       ],
     },
     {
       title: "FinTech Research Collaborator",
-      organization: "University of East London (with Dr. Fahimeh Ghasemi)",
+      organization: "University of East London (with Dr. Fahimeh Jafari)",
       period: "Jan 2024 – Present",
       type: "research",
       description: [
@@ -115,7 +116,7 @@ export default function Portfolio() {
       projects: ["PTSD Prediction Model", "Sustainable FinTech Framework"],
       links: [
         { name: "University of East London", url: "https://www.uel.ac.uk/" },
-        { name: "Dr. Fahimeh Ghasemi", url: "https://www.uel.ac.uk/staff/f/fahimeh-ghasemi" },
+        { name: "Dr. Fahimeh Jafari", url: "https://www.uel.ac.uk/about-uel/staff/fahimeh-jafari" },
         { name: "GitHub Profile", url: "https://github.com/Azka1212" },
       ],
     },
@@ -136,25 +137,10 @@ export default function Portfolio() {
       ],
       projects: ["Sustainable AI Evaluation Tool", "Edge Device Optimization Framework"],
       links: [
-        { name: "Bio-AI Lab", url: "https://www.uit.no/" },
+        { name: "Bio-AI Lab", url: "https://www.bioailab.org/" },
         { name: "University of Tromsø", url: "https://en.uit.no/" },
-        { name: "GitHub Profile", url: "https://github.com/Azka1212" },
+        { name: "GitHub Profile", url: "https://github.com/bioailab" },
       ],
-    },
-    {
-      title: "International Research Collaborator – Sustainability & AI Ethics",
-      organization: "Remote (with teams in the UK and Norway)",
-      period: "2023 – Present",
-      type: "research",
-      description: [
-        "Participated in collaborative research on responsible AI development and ethical implications",
-        "Co-developed an evaluation matrix for sustainable AI practices in real-world deployments",
-        "Provided input on generative model alignment with responsible innovation principles",
-        "Contributing to multi-author publications on AI ethics and sustainability",
-      ],
-      papers: ["Responsible AI Evaluation Matrix (Published)", "AI Ethics in Global Sustainability (In Progress)"],
-      projects: ["AI Ethics Framework", "Global Sustainability Assessment Tool"],
-      links: [{ name: "GitHub Profile", url: "https://github.com/Azka1212" }],
     },
   ]
 
@@ -302,24 +288,24 @@ export default function Portfolio() {
       description:
         "Context-aware healthcare assistant using large language models. FastAPI-powered AI chatbot delivering expert responses across cardiology, psychiatry, and dentistry using specialty-specific prompt templates.",
       tech: ["GPT-4", "FastAPI", "Medical AI", "Context-Aware Systems"],
-      github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=Medical+Bot",
+      github: "https://github.com/Azka1212/BOT",
+      image: "/images/medical-bot.jpeg",
     },
     {
       title: "Skin Treatment Visualizer",
       description:
         "A Stable Diffusion-based simulation of cosmetic effects on facial images. Web-based tool simulating aesthetic treatments (e.g., Botox, fillers) on uploaded images. Users can visualize cosmetic outcomes in real time.",
       tech: ["Stable Diffusion", "Computer Vision", "Web Development", "Image Processing"],
-      github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=Skin+Treatment+Visualizer",
+      github: "https://github.com/Azka1212/Skin-Treatment-Visualizer-Using-Stable-Diffusion",
+      image: "/images/skin.png",
     },
     {
       title: "PTSD Prediction Model",
       description:
         "Achieved 97.56% accuracy using NLP techniques on clinical text data. Built a text-based neural model to detect PTSD from patient records, contributing to mental health diagnosis and early intervention.",
       tech: ["Neural Networks", "NLP", "Healthcare AI", "Clinical Data"],
-      github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=PTSD+Prediction",
+      github: "https://github.com/Azka1212/PTSD-Prediction-Tool",
+      image: "/images/PTSD.jpeg",
     },
     {
       title: "Restaurant Review Manager",
@@ -327,7 +313,7 @@ export default function Portfolio() {
         "A sentiment analysis dashboard for restaurant reviews using text classification. System for review classification, sentiment analysis, and dashboard visualization with automated processing capabilities.",
       tech: ["NLP", "Sentiment Analysis", "Data Visualization", "Dashboard"],
       github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=Review+Manager",
+      image: "/images/review.jpeg",
     },
     {
       title: "RAG-based Restaurant Chatbot",
@@ -335,15 +321,15 @@ export default function Portfolio() {
         "Retrieval-augmented chatbot for restaurant owners to interact with business data, generate reports, and analyze sales. Built for US market with comprehensive business intelligence features.",
       tech: ["RAG", "Business Intelligence", "Data Analytics", "Chatbot"],
       github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=Restaurant+Chatbot",
+      image: "/images/R-chatbot.jpeg",
     },
     {
       title: "Code Generator & Optimizer",
       description:
         "An AI-powered tool that generates, refactors, and optimizes code snippets for multiple languages. Developer productivity API offering endpoints for code generation, bug fixing, and explanation.",
       tech: ["GPT-4", "Code Generation", "Developer Tools", "Multi-language"],
-      github: "https://github.com/Azka1212",
-      image: "/placeholder.svg?height=200&width=300&text=Code+Generator",
+      github: "https://github.com/Azka1212/CodeAI",
+      image: "/images/code.jpeg",
     },
   ]
 
@@ -356,61 +342,61 @@ export default function Portfolio() {
 
   const colleagueImages = [
     {
-      src: "/placeholder.svg?height=400&width=600&text=Research+Team+Norway",
+      src: "/images/bio.png",
       alt: "Research collaboration team in Norway",
       caption: "Bio-AI Lab Research Team, Tromsø, Norway",
-      link: "https://en.uit.no/",
+      link: "https://www.bioailab.org/",
       description:
         "Collaborative research on sustainable AI approaches for edge devices with international teams at University of Tromsø.",
       images: [
-        "/placeholder.svg?height=300&width=400&text=Norway+Team+1",
-        "/placeholder.svg?height=300&width=400&text=Norway+Lab+2",
+        "/images/sus.jpeg",
+        "/images/green.jpeg",
       ],
     },
     {
-      src: "/placeholder.svg?height=400&width=600&text=FinTech+Research+UK",
+      src: "/images/Fintech.png",
       alt: "FinTech research collaboration with UK team",
       caption: "FinTech Research Collaboration, University of East London",
       link: "https://www.uel.ac.uk/",
       description:
-        "AI-driven sustainability frameworks in financial systems with Dr. Fahimeh Ghasemi and research team.",
+        "AI-driven sustainability frameworks in financial systems with Dr. Fahimeh Jafari and research team.",
       images: [
-        "/placeholder.svg?height=300&width=400&text=UK+Research+1",
-        "/placeholder.svg?height=300&width=400&text=FinTech+Team+2",
+        "/images/fin.png",
+        "/images/finn.png",
       ],
     },
     {
-      src: "/placeholder.svg?height=400&width=600&text=AI+Development+Team",
+      src: "/images/AIO-logo.png",
       alt: "AI development team at AIO startup",
       caption: "AI Development Team, AIO Startup",
       link: "#",
       description: "Cross-functional AI development team working on RAG-based systems and generative AI applications.",
       images: [
-        "/placeholder.svg?height=300&width=400&text=AIO+Team+1",
-        "/placeholder.svg?height=300&width=400&text=Startup+Work+2",
+        "/images/AIO-meet.png",
+        "/images/AIO-team.png",
       ],
     },
     {
-      src: "/placeholder.svg?height=400&width=600&text=Academic+Conference",
+      src: "/images/Mena-ml.png",
       alt: "Academic conference with international researchers",
       caption: "MENA ML Winter School 2025, Qatar",
       link: "https://www.hbku.edu.qa/en/qcri",
       description: "International machine learning conference with researchers from across MENA region at QCRI.",
       images: [
-        "/placeholder.svg?height=300&width=400&text=Qatar+Conference+1",
-        "/placeholder.svg?height=300&width=400&text=MENA+School+2",
+        "/images/Mena.png",
+        "/images/Mena-con.png",
       ],
     },
   ]
 
   const testimonials = [
     {
-      name: "Dr. Fahimeh Ghasemi",
+      name: "Dr. Fahimeh Jafari",
       role: "Senior Lecturer, University of East London",
       company: "University of East London",
-      image: "/placeholder.svg?height=100&width=100&text=Dr.+Fahimeh",
+      image: "/images/fahime.png",
       testimonial:
-        "Azka has demonstrated exceptional research capabilities in our FinTech AI collaboration. His work on PTSD detection using NLP techniques achieved remarkable 97.56% accuracy, showcasing his deep understanding of both technical implementation and real-world applications.",
+        "Azka has demonstrated exceptional research capabilities in our FinTech AI collaboration. Her work on PTSD detection using NLP techniques achieved remarkable 97.56% accuracy, showcasing her deep understanding of both technical implementation and real-world applications.",
       rating: 5,
     },
     {
@@ -419,7 +405,7 @@ export default function Portfolio() {
       company: "University of Tromsø, Norway",
       image: "/placeholder.svg?height=100&width=100&text=Prof.+Norway",
       testimonial:
-        "Working with Azka on sustainable AI approaches has been incredibly productive. His ability to bridge theoretical research with practical implementation, especially in edge computing environments, has contributed significantly to our publications.",
+        "Working with Azka on sustainable AI approaches has been incredibly productive. Her ability to bridge theoretical research with practical implementation, especially in edge computing environments, has contributed significantly to our publications.",
       rating: 5,
     },
     {
@@ -428,7 +414,7 @@ export default function Portfolio() {
       company: "AIO Startup",
       image: "/placeholder.svg?height=100&width=100&text=AIO+Lead",
       testimonial:
-        "Azka's contribution to our AI development team has been outstanding. He successfully optimized our generative AI models, reducing operational costs by 60% while maintaining high performance. His technical expertise in RAG systems is exceptional.",
+        "Azka's contribution to our AI development team has been outstanding. She successfully optimized our generative AI models, reducing operational costs by 60% while maintaining high performance. Her technical expertise in RAG systems is exceptional.",
       rating: 5,
     },
     {
@@ -437,7 +423,7 @@ export default function Portfolio() {
       company: "FITFLEX",
       image: "/placeholder.svg?height=100&width=100&text=FITFLEX+Lead",
       testimonial:
-        "During his time with us, Azka developed robust iOS applications and created ML-based message classifiers that improved accuracy by 70%. His leadership in AdTech initiatives and technical innovation made a significant impact on our projects.",
+        "During her time with us, Azka developed robust iOS applications and created ML-based message classifiers that improved accuracy by 70%. Her leadership in AdTech initiatives and technical innovation made a significant impact on our projects.",
       rating: 5,
     },
   ]
@@ -512,7 +498,7 @@ export default function Portfolio() {
               <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-white/20 via-blue-400/20 to-purple-400/20 p-1 hover:scale-110 transition-all duration-500 animate-float drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                 <div className="w-full h-full rounded-full bg-slate-900/80 flex items-center justify-center overflow-hidden border border-white/20">
                   <img
-                    src="https://i.ibb.co/bRLbHpJY/Whats-App-Image-2025-05-29-at-10-44-22-AM.jpg"
+                    src="/images/profile.jpeg"
                     alt="Azka Ikramullah"
                     className="w-full h-full object-cover rounded-full"
                   />
@@ -540,7 +526,7 @@ export default function Portfolio() {
                 </span>{" "}
                 and{" "}
                 <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">
-                  generative AI solutions
+                  generative AI(Agentic AI) solutions
                 </span>
                 .
               </p>
@@ -585,7 +571,7 @@ export default function Portfolio() {
                 size="lg"
                 className="border-white/30 text-slate-200 hover:bg-white/10 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-white/25 bg-transparent backdrop-blur-sm drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
               >
-                <a href="/resume.pdf" download="Azka_Ikramullah_Resume.pdf">
+                <a href="/images/Azka.pdf" download="Azka_Ikramullah_Resume.pdf">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </a>
