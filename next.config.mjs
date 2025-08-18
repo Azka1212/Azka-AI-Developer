@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-const nextConfig = {
+export default {
   output: "export",
   images: { unoptimized: true },
-  basePath: base,          // e.g. "/Azka-AI-Developer"
-  assetPrefix: base + "/", // ensures CSS/JS/images work on Pages
+  basePath: base,
+  assetPrefix: base + "/",
   typescript: { ignoreBuildErrors: true },
 };
-
-export default nextConfig;
