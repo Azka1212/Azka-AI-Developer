@@ -1,11 +1,12 @@
-Set-Content -Encoding UTF8 -Path .\next.config.mjs -Value @"
 /** @type {import('next').NextConfig} */
+const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-  basePath: "",
-  assetPrefix: "",
+  basePath: base,          // e.g. "/Azka-AI-Developer"
+  assetPrefix: base + "/", // ensures CSS/JS/images work on Pages
   typescript: { ignoreBuildErrors: true },
 };
+
 export default nextConfig;
-"@
