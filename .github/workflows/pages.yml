@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -23,14 +23,39 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
+
+      # --- package manager autodetect ---
+      - name: Use pnpm
+        if: hashFiles('**/pnpm-lock.yaml') != ''
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install deps (pnpm)
+        if: hashFiles('**/pnpm-lock.yaml') != ''
+        run: pnpm install --frozen-lockfile
+
+      - name: Install deps (yarn)
+        if: hashFiles('**/yarn.lock') != '' && hashFiles('**/pnpm-lock.yaml') == ''
+        run: yarn install --frozen-lockfile
+
+      - name: Install deps (npm)
+        if: hashFiles('**/package-lock.json') != '' && hashFiles('**/pnpm-lock.yaml') == '' && hashFiles('**/yarn.lock') == ''
+        run: npm ci
+
       - uses: actions/configure-pages@v5
-      - run: npm run build
-      - run: mkdir -p out && touch out/.nojekyll
+
+      - name: Build (Next static export)
+        run: |
+          pnpm run build 2>/dev/null || yarn build 2>/dev/null || npm run build
+
+      - name: Add .nojekyll (serve _next)
+        run: mkdir -p out && touch out/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
