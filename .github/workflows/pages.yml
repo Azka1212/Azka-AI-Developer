@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install deps
         run: npm ci
@@ -34,7 +34,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build (Next static export)
-        run: npm run build             # produces ./out thanks to output:"export"
+        env:
+          NEXT_PUBLIC_BASE_PATH: /azka-portfolio-website
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

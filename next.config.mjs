@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
+const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig = {
-  output: "export",               // static export for GitHub Pages
-  images: { unoptimized: true },  // needed on static hosting
-  basePath: "",                   // user site: no base path
-  assetPrefix: "",                // user site: no prefix
+  output: "export",                // static export
+  images: { unoptimized: true },   // required on static hosting
+  basePath: base,                  // e.g. "/azka-portfolio-website"
+  assetPrefix: base + "/",         // ensures CSS/JS/images get correct prefix
   typescript: { ignoreBuildErrors: true },
 };
 
