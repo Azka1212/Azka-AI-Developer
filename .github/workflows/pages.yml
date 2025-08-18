@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 env:
@@ -22,39 +22,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
-
-      - name: Install deps
-        run: npm ci
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Build (Next static export)
-        run: npm run build
-
-      - name: Add .nojekyll (serve _next)
-        run: mkdir -p out && touch out/.nojekyll
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          cache: npm
+      - run: npm ci
+      - uses: actions/configure-pages@v5
+      - run: npm run build
+      - run: mkdir -p out && touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
