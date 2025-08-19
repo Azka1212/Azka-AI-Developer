@@ -573,7 +573,7 @@ export default function Portfolio() {
                 size="lg"
                 className="border-white/30 text-slate-200 hover:bg-white/10 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-white/25 bg-transparent backdrop-blur-sm drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
               >
-                <a href="/images/Azka.pdf" download="Azka_Ikramullah_Resume.pdf">
+                <a href={asset("/images/Azka.pdf")} download="Azka_Ikramullah_Resume.pdf">
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </a>
@@ -1138,7 +1138,7 @@ export default function Portfolio() {
                 >
                   <div className="relative group">
                     <img
-                      src={project.image || "/placeholder.svg"}
+                      src={asset(project.image || "/placeholder.svg")}
                       alt={project.title}
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
@@ -1320,7 +1320,7 @@ export default function Portfolio() {
               key={index}
               className="absolute w-96 h-64 bg-cover bg-center rounded-lg blur-sm"
               style={{
-                backgroundImage: `url(${image.src})`,
+                backgroundImage: `url(${asset(image.src)})`,
                 top: `${20 + index * 15}%`,
                 left: `${10 + index * 20}%`,
                 transform: `rotate(${-10 + index * 5}deg)`,
@@ -1354,7 +1354,7 @@ export default function Portfolio() {
                 >
                   <div className="relative group overflow-hidden rounded-t-lg">
                     <img
-                      src={collaboration.src || "/placeholder.svg"}
+                      src={asset(collaboration.src || "/placeholder.svg")}
                       alt={collaboration.alt}
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
@@ -1376,7 +1376,7 @@ export default function Portfolio() {
                       {collaboration.images.map((img, imgIndex) => (
                         <div key={imgIndex} className="relative group">
                           <img
-                            src={img || "/placeholder.svg"}
+                            src={asset(img || "/placeholder.svg")}
                             alt={`${collaboration.caption} ${imgIndex + 1}`}
                             className="w-full h-24 object-cover rounded transition-transform duration-300 group-hover:scale-105"
                           />
@@ -1423,7 +1423,7 @@ export default function Portfolio() {
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <img
-                        src={testimonial.image || "/placeholder.svg"}
+                        src={asset(testimonial.image || "/placeholder.svg")}
                         alt={testimonial.name}
                         className="w-16 h-16 rounded-full mr-4 border-2 border-white/20 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                       />
