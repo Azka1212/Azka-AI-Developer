@@ -1,5 +1,5 @@
 "use client"
-
+import { asset } from "@/lib/assets";
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -31,6 +31,8 @@ import {
   Link,
   Star,
 } from "lucide-react"
+
+
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
@@ -498,7 +500,7 @@ export default function Portfolio() {
               <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-white/20 via-blue-400/20 to-purple-400/20 p-1 hover:scale-110 transition-all duration-500 animate-float drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                 <div className="w-full h-full rounded-full bg-slate-900/80 flex items-center justify-center overflow-hidden border border-white/20">
                   <img
-                    src="/images/profile.jpeg"
+                    src={asset("/images/profile.jpeg")}
                     alt="Azka Ikramullah"
                     className="w-full h-full object-cover rounded-full"
                   />
