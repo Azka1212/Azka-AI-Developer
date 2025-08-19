@@ -512,7 +512,7 @@ export default function Portfolio() {
               </h1>
               <p className="text-lg md:text-xl lg:text-2xl text-slate-200 mb-4 animate-fade-in-up animation-delay-500">
                 <span className="font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-                  AI Engineer | Generative AI Specialist | Cloud ML Developer
+                  AI Engineer | LLM Security & Generative AI | Cloud ML
                 </span>
               </p>
               <p className="text-base md:text-lg text-slate-300 mb-8 animate-fade-in-up animation-delay-700">
@@ -520,31 +520,25 @@ export default function Portfolio() {
               </p>
             </div>
 
+           
             <div className="text-base md:text-lg lg:text-xl text-slate-200 mb-12 leading-relaxed animate-fade-in-up animation-delay-1000">
               <p className="mb-4">
-                <strong>AI-first innovator</strong> passionate about creating real-world impact through cutting-edge{" "}
-                <span className="text-blue-300 font-semibold drop-shadow-[0_0_8px_rgba(147,197,253,0.5)]">
-                  machine learning
-                </span>{" "}
-                and{" "}
-                <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">
-                  generative AI(Agentic AI) solutions
-                </span>
-                .
+                <strong>Applied AI engineer</strong> building production LLM systems with a focus on{" "}
+                <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">security, privacy, and reliability</span>.
               </p>
               <p className="mb-4">
-                <strong>Research Focus:</strong> Utilizing AI-based research to innovate and contribute to the
-                betterment of society through sustainable and ethical AI solutions.
+                <strong>Research Focus:</strong> LLM security (adversarial robustness, guardrails, privacy-aware design) and
+                AI for FinTech sustainability (risk, ESG-aligned intelligence).
               </p>
               <p className="mb-4">
-                <strong>Development Philosophy:</strong> Building and automating cutting-edge AI systems that transform
-                intelligent concepts into scalable, production-ready applications.
+                <strong>Engineering Philosophy:</strong> Ship measurable value—evaluate, harden, and scale GenAI services from
+                prototype to cloud production.
               </p>
               <p className="italic text-slate-300 border-l-4 border-white/30 pl-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                "I thrive at the intersection of AI research and practical implementation—bridging the gap between
-                theoretical innovation and real-world deployment."
+                "I work at the intersection of research and deployment—turning LLM ideas into secure, reliable, real-world systems."
               </p>
             </div>
+
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animation-delay-1500">
