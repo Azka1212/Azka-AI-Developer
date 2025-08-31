@@ -530,8 +530,7 @@ export default function Portfolio() {
                 <strong>Research Focus:</strong> LLM & RL to enhance security | Fintech & Sustainability.
               </p>
               <p className="mb-4">
-                <strong>Engineering Philosophy:</strong> Ship measurable value—evaluate, harden, and scale GenAI services from
-                prototype to cloud production.
+                <strong>Engineering Philosophy:</strong> Turn ideas into working systems that people can trust.
               </p>
               <p className="italic text-slate-300 border-l-4 border-white/30 pl-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
                 "I work at the intersection of research and deployment—turning LLM ideas into secure, reliable, real-world systems."
