@@ -527,8 +527,7 @@ export default function Portfolio() {
                 <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">security, privacy, and reliability</span>.
               </p>
               <p className="mb-4">
-                <strong>Research Focus:</strong> LLM security (adversarial robustness, guardrails, privacy-aware design) and
-                AI for FinTech sustainability (risk, ESG-aligned intelligence).
+                <strong>Research Focus:</strong> LLM & RL to enhance security | Fintech & Sustainability.
               </p>
               <p className="mb-4">
                 <strong>Engineering Philosophy:</strong> Ship measurable value—evaluate, harden, and scale GenAI services from
