@@ -621,11 +621,11 @@ export default function Portfolio() {
               </p>
               <p className="text-slate-400">
                 Research Areas:{" "}
-                <span className="text-blue-300 drop-shadow-[0_0_8px_rgba(147,197,253,0.5)]">LLMS & RL</span>,{" "}
+                <span className="text-blue-300 drop-shadow-[0_0_8px_rgba(147,197,253,0.5)]">Agentic AI</span>,{" "}
                 <span className="text-purple-300 drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">RL Based agents</span>,
                 and{" "}
                 <span className="text-cyan-300 drop-shadow-[0_0_8px_rgba(103,232,249,0.5)]">
-                  FinTech & Sustainability
+                  ESG & Sustainability
                 </span>
               </p>
             </div>
