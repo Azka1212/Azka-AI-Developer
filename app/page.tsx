@@ -508,11 +508,11 @@ export default function Portfolio() {
               </div>
 
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-gradient drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
-                Hi, I'm Azka Ikramullah
+                Azka
               </h1>
               <p className="text-lg md:text-xl lg:text-2xl text-slate-200 mb-4 animate-fade-in-up animation-delay-500">
                 <span className="font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-                  AI Engineer | LLM Security & Generative AI | Cloud ML
+                  AI Developer & Researcher
                 </span>
               </p>
               <p className="text-base md:text-lg text-slate-300 mb-8 animate-fade-in-up animation-delay-700">
@@ -523,7 +523,7 @@ export default function Portfolio() {
            
             <div className="text-base md:text-lg lg:text-xl text-slate-200 mb-12 leading-relaxed animate-fade-in-up animation-delay-1000">
               <p className="mb-4">
-                <strong>Applied AI engineer</strong> building production LLM systems with a focus on{" "}
+                <strong>AI developer</strong> building production ready LLM systems with a focus on{" "}
                 <span className="text-purple-300 font-semibold drop-shadow-[0_0_8px_rgba(196,181,253,0.5)]">security, privacy, and reliability</span>.
               </p>
               <p className="mb-4">
