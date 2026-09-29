@@ -17,6 +17,7 @@ import {
   Mail,
   MapPin,
   ChevronDown,
+  Handshake,
 } from "lucide-react";
 import { repositoryGuides } from "@/lib/repository-guides";
 import { asset } from "@/lib/assets";
@@ -32,6 +33,7 @@ const sections = [
   { id: "experience", label: "Experience", icon: BriefcaseBusiness },
   { id: "projects", label: "Projects", icon: FolderOpen },
   { id: "research", label: "Research", icon: BookOpen },
+  { id: "consulting", label: "Consulting & Startups", icon: Handshake },
   { id: "contact", label: "Contact", icon: Mail },
 ] as const;
 type Section = (typeof sections)[number]["id"];
@@ -183,6 +185,7 @@ export default function Portfolio() {
                       "Projects and collections, with descriptions, tools, and code.",
                     research:
                       "Papers, research experience, and academic activities.",
+                    consulting: "Freelance services, AI consulting, and ventures I’m building.",
                     contact: "Where to reach me and find my work.",
                   }[active]
                 }
@@ -736,6 +739,54 @@ export default function Portfolio() {
                   </article>
                 </div>
               </details>
+            </section>
+
+            <section
+              hidden={active !== "consulting"}
+              aria-label="Consulting & Startups"
+              className="section-content"
+            >
+              <div className="block-heading consulting-heading">
+                <h2>Freelancing &amp; AI consulting</h2>
+              </div>
+              <p className="consulting-intro">
+                I help turn an idea or a manual task into a working AI tool.
+                I can help you decide what to build, develop a prototype, or
+                connect AI features to an existing application.
+              </p>
+              <div className="service-grid">
+                {[
+                  { title: "AI assistants & business tools", text: "Build assistants that answer questions from your documents, organize customer feedback, or turn text into useful records." },
+                  { title: "APIs & application development", text: "Develop Python backends and APIs, connect model services, and add AI features to web or mobile applications." },
+                  { title: "AI consulting", text: "Review your use case, compare technical approaches, and define the data, testing, and development steps needed for a prototype." },
+                ].map((service) => (
+                  <article key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="consulting-links">
+                <a className="cv-button" href="mailto:azkaikramullah496@gmail.com?subject=Freelance%20or%20AI%20consulting%20enquiry">Discuss a project <ArrowUpRight size={15} aria-hidden="true" /></a>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); setCategory("All"); setQuery(""); navigate("projects"); }}>See examples of my work <ArrowRight size={15} aria-hidden="true" /></a>
+              </div>
+              <div className="block-heading">
+                <h2>Startups I’m working on</h2>
+              </div>
+              <div className="venture-list">
+                <article>
+                  <span className="small-label">Founder</span>
+                  <h3>AI services &amp; products</h3>
+                  <p>I’m building a venture focused on AI-based services and products.</p>
+                  <p className="venture-note">More details to come.</p>
+                </article>
+                <article>
+                  <span className="small-label">Cofounder</span>
+                  <h3>Agritech product</h3>
+                  <p>I’m a cofounder of an agritech product that we plan to develop into a business.</p>
+                  <p className="venture-note">Product in development. Business details to come.</p>
+                </article>
+              </div>
             </section>
 
             <section

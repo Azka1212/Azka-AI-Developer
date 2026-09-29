@@ -14,7 +14,7 @@ Reviewed 2026-09-28. The supplied `Azka_Ikramullah_CV.pdf` is the primary source
 
 The project directory includes 29 substantive projects and collections, including profile-listed projects without public code. `Azka1212` is the profile README repository, not a project. Six earlier portfolio copies/placeholders (`Portfolio`, `Azka-Portfolio`, `Potfolio-Website`, `Portfolio_azka`, `portfolio-website`, `Azka1212.github.io`) are omitted to avoid duplicate portfolio entries.
 
-Business describes documented applications and an MVP; it does not imply founder status, clients, revenue, or consulting availability. Interests summarize topics explicitly listed in the GitHub profile and CV; they are not a fabricated live news feed. Third-paper acceptance status follows the supplied CV, and no code URL was supplied for it.
+Business applications describe documented projects and an MVP. Founder/cofounder roles and consulting offers are now described separately in Consulting & Startups, following the user’s explicit update below. No clients or revenue are claimed. Interests summarize topics explicitly listed in the GitHub profile and CV; they are not a fabricated live news feed. Third-paper acceptance status follows the supplied CV, and no code URL was supplied for it.
 
 ## Detail restoration — 2026-09-29
 
@@ -29,3 +29,8 @@ Reviewed the trees, README files, and relevant implementation files of all 24 li
 Corrections include GPT-3.5 in the chatbot source, OpenCV/OpenPose lineage for pose estimation, the tabular classifier in the PTSD training script, the empty quiz scaffold, and missing modules in the Django quiz and SAC-Triad snapshots. CV results are attributed and not represented as reproduced benchmarks. Setup instructions were source-reviewed; the individual research and application projects were not executed during documentation work.
 
 The reasoning overview image is copied from `Azka1212/reasoning-code/AAAI/Diagram3.png`. Original paper links, experiment figures, CodeAI screenshots, maintained AgriDirect operating instructions, and FYP/PTSD project resource links are preserved in the corresponding READMEs. Workshop and MONAI tutorial attribution is retained. Private repository visibility remains unchanged.
+
+
+## Consulting and startup roles — user update, 2026-09-29
+
+The user requested a dedicated freelancing/AI consulting and startups tab, and explicitly supplied two roles: founder of an AI services and products venture, and cofounder of an agritech product intended to become a business later. Startup names, launch dates, traction, and commercial details have not been supplied. The agritech entry is not assigned to a specific repository without confirmation. Service descriptions draw on documented project experience; they do not claim existing customers or completed consulting engagements.
