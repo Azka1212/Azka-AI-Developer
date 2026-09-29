@@ -7,7 +7,7 @@ A portfolio website organizing my background, experience, projects, research, an
 
 ## What this project does
 
-- Navigate between About, Experience, Projects, Research, Consulting & Startups, and Contact.
+- Navigate between About, Experience, Projects, Research, Startups, and Contact.
 - Search and filter projects and expand implementation details.
 - Read publication summaries and follow paper, code, and profile links.
 - Download the current CV and inspect research figures.

@@ -34,3 +34,8 @@ The reasoning overview image is copied from `Azka1212/reasoning-code/AAAI/Diagra
 ## Consulting and startup roles — user update, 2026-09-29
 
 The user requested a dedicated freelancing/AI consulting and startups tab, and explicitly supplied two roles: founder of an AI services and products venture, and cofounder of an agritech product intended to become a business later. Startup names, launch dates, traction, and commercial details have not been supplied. The agritech entry is not assigned to a specific repository without confirmation. Service descriptions draw on documented project experience; they do not claim existing customers or completed consulting engagements.
+
+
+## Startup-only section — user correction, 2026-09-29
+
+The user requested the tab be named Startups and removed the separate freelance offering. The section now contains only two venture entries. The AI business offers products and project-based services, including development and AI consulting. The old #consulting link continues to open this section; new navigation uses #startups.
