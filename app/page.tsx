@@ -319,51 +319,53 @@ export default function Portfolio() {
                   <time>May 2019 — May 2023</time>
                 </article>
               </div>
-              <div className="block-heading">
-                <h2>Academic activities</h2>
-              </div>
-              <div className="activity-list">
-                {[
-                  {
-                    date: "2026",
-                    title: "WiML at NeurIPS · Reviewer",
-                    text: "Served as a reviewer for Women in Machine Learning (WiML) at NeurIPS 2026.",
-                  },
-                  {
-                    date: "Jul 2026",
-                    title: "Women in Machine Learning Symposium at ICML",
-                    text: "Presented When Reasoning Collapses as a poster in Seoul, South Korea.",
-                  },
-                  {
-                    date: "2026",
-                    title: "AAAI Conference on Artificial Intelligence",
-                    text: "Presented work on language-model reasoning and jailbreak robustness.",
-                  },
-                  {
-                    date: "Jan 2026",
-                    title: "MENAML Conference",
-                    text: "Reviewed applications for the conference selection process.",
-                  },
-                  {
-                    date: "Feb 2025",
-                    title: "MENA Machine Learning Winter School",
-                    text: "Participated in sessions on responsible AI, language models, and federated learning at QCRI in Doha.",
-                  },
-                  {
-                    date: "2025 — Present",
-                    title: "BK21 research project",
-                    text: "Contribute to government-funded work on language-model security and trustworthy AI at Gachon University.",
-                  },
-                ].map((a) => (
-                  <article key={a.title}>
-                    <span>{a.date}</span>
-                    <div>
-                      <h3>{a.title}</h3>
-                      <p>{a.text}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <details className="simple-disclosure">
+                <summary>
+                  Academic activities <Plus size={17} aria-hidden="true" />
+                </summary>
+                <div className="activity-list">
+                  {[
+                    {
+                      date: "2026",
+                      title: "WiML at NeurIPS · Reviewer",
+                      text: "Served as a reviewer for Women in Machine Learning (WiML) at NeurIPS 2026.",
+                    },
+                    {
+                      date: "Jul 2026",
+                      title: "Women in Machine Learning Symposium at ICML",
+                      text: "Presented When Reasoning Collapses as a poster in Seoul, South Korea.",
+                    },
+                    {
+                      date: "2026",
+                      title: "AAAI Conference on Artificial Intelligence",
+                      text: "Presented work on language-model reasoning and jailbreak robustness.",
+                    },
+                    {
+                      date: "Jan 2026",
+                      title: "MENAML Conference",
+                      text: "Reviewed applications for the conference selection process.",
+                    },
+                    {
+                      date: "Feb 2025",
+                      title: "MENA Machine Learning Winter School",
+                      text: "Participated in sessions on responsible AI, language models, and federated learning at QCRI in Doha.",
+                    },
+                    {
+                      date: "2025 — Present",
+                      title: "BK21 research project",
+                      text: "Contribute to government-funded work on language-model security and trustworthy AI at Gachon University.",
+                    },
+                  ].map((a) => (
+                    <article key={a.title}>
+                      <span>{a.date}</span>
+                      <div>
+                        <h3>{a.title}</h3>
+                        <p>{a.text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </details>
               <details className="simple-disclosure">
                 <summary>
                   Trends I follow <Plus size={17} aria-hidden="true" />
