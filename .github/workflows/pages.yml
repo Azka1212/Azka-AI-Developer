@@ -1,8 +1,10 @@
-name: Deploy Next.js to GitHub Pages
+name: Sync projects and deploy portfolio
 
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '23 4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -28,7 +30,21 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # no configure-pages step
+      - uses: actions/cache/restore@v4
+        with:
+          path: lib/github-projects.json
+          key: github-sync-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: github-sync-
+      - name: Sync public projects and READMEs
+        run: npm run sync:github
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: actions/cache/save@v4
+        with:
+          path: lib/github-projects.json
+          key: github-sync-${{ github.run_id }}-${{ github.run_attempt }}
+      - run: npm run test:sync
+      - run: npx tsc --noEmit
       - run: npm run build
       - run: mkdir -p out && touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3

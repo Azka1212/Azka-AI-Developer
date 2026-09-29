@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "sync:github": "node scripts/sync-github.mjs",
+    "test:sync": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -53,8 +55,12 @@
     "react-day-picker": "9.8.0",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.1",
+    "react-markdown": "^10.1.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
+    "rehype-raw": "^7.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "remark-gfm": "^4.0.1",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",

@@ -19,14 +19,20 @@ import {
   ChevronDown,
   Handshake,
 } from "lucide-react";
+import { projects, githubProjects, lastGithubSync } from "@/lib/project-catalog";
+import dynamic from "next/dynamic";
+import ConsultationChat from "@/components/portfolio/consultation-chat";
+import LearningResources from "@/components/portfolio/learning-resources";
 import { repositoryGuides } from "@/lib/repository-guides";
 import { asset } from "@/lib/assets";
-import { projects, socials, papers, interests } from "@/lib/portfolio-data";
+import { socials, papers, interests } from "@/lib/portfolio-data";
 import {
   projectDetails,
   experience,
   earlierExperience,
 } from "@/lib/portfolio-details";
+
+const RepositoryReadme = dynamic(() => import("@/components/portfolio/repository-readme"), {loading: () => <p>Loading project details…</p>});
 
 const sections = [
   { id: "about", label: "About", icon: UserRound },
@@ -383,14 +389,7 @@ export default function Portfolio() {
                 <summary>
                   Topic-wise learning resources <Plus size={17} aria-hidden="true" />
                 </summary>
-                <div className="learning-preview">
-                  <p>
-                    I’ll share AI learning resources topic by topic, including
-                    articles, courses, and my notes as I learn. I also plan to
-                    share related videos on YouTube and posts on LinkedIn.
-                  </p>
-                  <p>More details to come.</p>
-                </div>
+                <LearningResources />
               </details>
               <details className="simple-disclosure">
                 <summary>
@@ -458,6 +457,15 @@ export default function Portfolio() {
               aria-label="Projects"
               className="section-content"
             >
+              {!query && category === "All" && <div className="featured-projects" aria-label="Featured projects">
+                {[
+                  {title:"When Reasoning Collapses", label:"Research", text:"How reasoning changes as questions get harder."},
+                  {title:"AI Code Assistant", label:"Development", text:"APIs for generating, explaining, and debugging code."},
+                  {title:"AgriDirect", label:"Business", text:"Turn agricultural briefings into structured offers."},
+                ].filter(feature => projects.some(p => p.title === feature.title)).map(feature => <button key={feature.title} onClick={() => {setQuery(feature.title); setOpenProjects(prev => [...new Set([...prev, feature.title])]);}}>
+                  <span className="small-label">{feature.label}</span><h2>{feature.title}</h2><p>{feature.text}</p><span className="featured-link">Explore project ↗</span>
+                </button>)}
+              </div>}
               <div className="project-controls">
                 <label className="search-field">
                   <Search size={17} aria-hidden="true" />
@@ -496,6 +504,7 @@ export default function Portfolio() {
                   </button>
                 ))}
               </div>
+              {lastGithubSync && <p className="sync-note">GitHub updated {lastGithubSync.slice(0,10)}</p>}
               <div className="result-bar">
                 <p role="status" aria-live="polite">
                   {results.length} of {projects.length} projects
@@ -519,6 +528,7 @@ export default function Portfolio() {
               <div className="project-list">
                 {results.map((p) => {
                   const detail = projectDetails[p.title];
+                  const githubRepo = !p.private && githubProjects.find(repo => repo.repo === p.repo);
                   const guide = repositoryGuides[p.title];
                   const isOpen = openProjects.includes(p.title);
                   const id = `project-${projects.indexOf(p)}`;
@@ -544,7 +554,7 @@ export default function Portfolio() {
                         <Plus size={19} aria-hidden="true" />
                       </button>
                       <div className="project-body" id={id} hidden={!isOpen}>
-                        <dl>
+                        {githubRepo ? (active === "projects" && isOpen && <RepositoryReadme repo={githubRepo} />) : detail && <dl>
                           <div>
                             <dt>Purpose</dt>
                             <dd>{detail.context}</dd>
@@ -569,8 +579,8 @@ export default function Portfolio() {
                               <dd>{detail.result}</dd>
                             </div>
                           )}
-                        </dl>
-                        {guide && (
+                        </dl>}
+                        {!githubRepo && guide && (
                           <div className="repository-guide">
                             <p className="repo-status"><span className="small-label">Repository status</span>{guide.status}</p>
                             <h3>How it works</h3>
@@ -795,6 +805,7 @@ export default function Portfolio() {
           <footer>© {new Date().getFullYear()} Azka Ikramullah</footer>
         </main>
       </div>
+      <ConsultationChat onNavigate={(section, search) => {setCategory("All");setQuery(search || "");if(search)setOpenProjects(prev=>[...new Set([...prev,search])]);navigate(section);}} />
     </>
   );
 }

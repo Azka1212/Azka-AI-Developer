@@ -1,0 +1,25 @@
+{
+  "owner": "Azka1212",
+  "topic": "portfolio",
+  "include": [
+    "reasoning-code",
+    "SAC-Traid",
+    "BOT",
+    "CodeAI",
+    "PTSD-Prediction-Tool",
+    "SOP-Generator",
+    "Story-Generated",
+    "Quiz-Generated",
+    "Django-RestfulAPI-Gen-AI",
+    "Pose_Project_API",
+    "Swift-iOS",
+    "PTSD-Mobile-Application",
+    "Labyrinth-Game-Using-Prolog",
+    "FYP",
+    "DATA-Analytics",
+    "Python",
+    "Projects",
+    "Azka-AI-Developer"
+  ],
+  "exclude": []
+}

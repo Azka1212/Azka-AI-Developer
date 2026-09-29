@@ -63,3 +63,11 @@ Project details are maintained separately from layout code. Private repositories
 [Project details and related work](https://azka1212.github.io/Azka-AI-Developer/#projects)
 
 > Documentation was checked against the repository source. Unless explicitly stated, setup commands describe the intended entry points and were not executed as part of this documentation update.
+
+## Automatic updates and enquiries
+
+Public project details sync from GitHub daily and on deployment. Add the `portfolio` topic to a new public repository to include it. Edit its README to update the expanded details. Private projects retain manually approved summaries.
+
+The site also includes featured projects, topic-based learning resources, and a guided enquiry chat that prepares an email draft.
+
+See [maintenance instructions](docs/maintaining-portfolio.md) for immediate syncing, learning links, and chat behavior.
