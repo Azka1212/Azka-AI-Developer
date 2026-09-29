@@ -177,20 +177,22 @@ export default function Portfolio() {
               <h1 id="content-title" tabIndex={-1}>
                 {sections.find((s) => s.id === active)?.label}
               </h1>
+              {active !== "about" && (
               <p>
                 {
                   {
-                    about: "My background and the work I do.",
+                    about: "",
                     experience: "Roles, responsibilities, and results.",
                     projects:
                       "Projects and collections, with descriptions, tools, and code.",
                     research:
-                      "Papers, research experience, and academic activities.",
+                      "Papers and research findings.",
                     startups: "The businesses and products I’m building.",
                     contact: "Where to reach me and find my work.",
                   }[active]
                 }
               </p>
+              )}
             </div>
 
             <section
@@ -318,33 +320,53 @@ export default function Portfolio() {
                 </article>
               </div>
               <div className="block-heading">
-                <h2>Tools I use</h2>
+                <h2>Academic activities</h2>
               </div>
-              <dl className="skills">
-                <div>
-                  <dt>Languages</dt>
-                  <dd>Python, Swift, Objective-C</dd>
-                </div>
-                <div>
-                  <dt>Machine learning</dt>
-                  <dd>
-                    PyTorch, TensorFlow, Scikit-learn, Hugging Face, OpenCV
-                  </dd>
-                </div>
-                <div>
-                  <dt>Applications</dt>
-                  <dd>
-                    FastAPI, Django, REST APIs, retrieval-augmented generation
-                  </dd>
-                </div>
-                <div>
-                  <dt>Deployment & data</dt>
-                  <dd>AWS, Google Cloud, Docker, Git, Pandas, NumPy</dd>
-                </div>
-              </dl>
+              <div className="activity-list">
+                {[
+                  {
+                    date: "2026",
+                    title: "WiML at NeurIPS · Reviewer",
+                    text: "Served as a reviewer for Women in Machine Learning (WiML) at NeurIPS 2026.",
+                  },
+                  {
+                    date: "Jul 2026",
+                    title: "Women in Machine Learning Symposium at ICML",
+                    text: "Presented When Reasoning Collapses as a poster in Seoul, South Korea.",
+                  },
+                  {
+                    date: "2026",
+                    title: "AAAI Conference on Artificial Intelligence",
+                    text: "Presented work on language-model reasoning and jailbreak robustness.",
+                  },
+                  {
+                    date: "Jan 2026",
+                    title: "MENAML Conference",
+                    text: "Reviewed applications for the conference selection process.",
+                  },
+                  {
+                    date: "Feb 2025",
+                    title: "MENA Machine Learning Winter School",
+                    text: "Participated in sessions on responsible AI, language models, and federated learning at QCRI in Doha.",
+                  },
+                  {
+                    date: "2025 — Present",
+                    title: "BK21 research project",
+                    text: "Contribute to government-funded work on language-model security and trustworthy AI at Gachon University.",
+                  },
+                ].map((a) => (
+                  <article key={a.title}>
+                    <span>{a.date}</span>
+                    <div>
+                      <h3>{a.title}</h3>
+                      <p>{a.text}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
               <details className="simple-disclosure">
                 <summary>
-                  Topics I follow <Plus size={17} aria-hidden="true" />
+                  Trends I follow <Plus size={17} aria-hidden="true" />
                 </summary>
                 <div className="interest-list">
                   {interests.map((i) => (
@@ -677,69 +699,6 @@ export default function Portfolio() {
                   </article>
                 ))}
               </div>
-              <div className="block-heading">
-                <h2>Academic activities</h2>
-              </div>
-              <div className="activity-list">
-                {[
-                  {
-                    date: "Jul 2026",
-                    title: "Women in Machine Learning Symposium at ICML",
-                    text: "Presented When Reasoning Collapses as a poster in Seoul, South Korea.",
-                  },
-                  {
-                    date: "2026",
-                    title: "AAAI Conference on Artificial Intelligence",
-                    text: "Presented work on language-model reasoning and jailbreak robustness.",
-                  },
-                  {
-                    date: "Jan 2026",
-                    title: "MENAML Conference",
-                    text: "Reviewed applications for the conference selection process.",
-                  },
-                  {
-                    date: "Feb 2025",
-                    title: "MENA Machine Learning Winter School",
-                    text: "Participated in sessions on responsible AI, language models, and federated learning at QCRI in Doha.",
-                  },
-                  {
-                    date: "2025 — Present",
-                    title: "BK21 research project",
-                    text: "Contribute to government-funded work on language-model security and trustworthy AI at Gachon University.",
-                  },
-                ].map((a) => (
-                  <article key={a.title}>
-                    <span>{a.date}</span>
-                    <div>
-                      <h3>{a.title}</h3>
-                      <p>{a.text}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-              <details className="simple-disclosure">
-                <summary>
-                  Other research collaborations{" "}
-                  <Plus size={17} aria-hidden="true" />
-                </summary>
-                <div className="interest-list">
-                  <article>
-                    <h3>University of East London · Started 2024</h3>
-                    <p>
-                      Collaboration with Dr. Fahimeh Jafari on AI,
-                      sustainability, and financial systems, as described in my
-                      earlier portfolio.
-                    </p>
-                  </article>
-                  <article>
-                    <h3>Bio-AI Lab · Started 2024</h3>
-                    <p>
-                      Research and review work on energy-efficient AI and
-                      sustainable approaches for edge devices.
-                    </p>
-                  </article>
-                </div>
-              </details>
             </section>
 
             <section

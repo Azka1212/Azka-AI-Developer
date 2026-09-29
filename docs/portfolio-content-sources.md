@@ -39,3 +39,8 @@ The user requested a dedicated freelancing/AI consulting and startups tab, and e
 ## Startup-only section — user correction, 2026-09-29
 
 The user requested the tab be named Startups and removed the separate freelance offering. The section now contains only two venture entries. The AI business offers products and project-based services, including development and AI consulting. The old #consulting link continues to open this section; new navigation uses #startups.
+
+
+## About and research organization — user update, 2026-09-29
+
+Removed the About subtitle, Tools I use block, and Other research collaborations section at the user's request. Academic activities now appear in About. Renamed Topics I follow to Trends I follow. The user directly supplied their WiML at NeurIPS 2026 reviewer role; it is listed with the year only, without an invented month or review count.
