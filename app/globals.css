@@ -1509,3 +1509,6 @@ footer {
   .venture-list { grid-template-columns: 1fr; }
   .sidebar nav a { min-height: 40px; white-space: normal; text-align: center; }
 }
+
+.learning-preview { padding: 0 0 20px; color: var(--muted); max-width: 700px; }
+.learning-preview p + p { margin-top: 12px; }

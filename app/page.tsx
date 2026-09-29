@@ -381,6 +381,19 @@ export default function Portfolio() {
               </details>
               <details className="simple-disclosure">
                 <summary>
+                  Topic-wise learning resources <Plus size={17} aria-hidden="true" />
+                </summary>
+                <div className="learning-preview">
+                  <p>
+                    I’ll share AI learning resources topic by topic, including
+                    articles, courses, and my notes as I learn. I also plan to
+                    share related videos on YouTube and posts on LinkedIn.
+                  </p>
+                  <p>More details to come.</p>
+                </div>
+              </details>
+              <details className="simple-disclosure">
+                <summary>
                   Courses & certifications <Plus size={17} aria-hidden="true" />
                 </summary>
                 <ul className="bullets">
