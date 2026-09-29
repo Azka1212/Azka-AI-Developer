@@ -30,3 +30,9 @@ test('pagination continues beyond one hundred repositories',async()=>{
  assert.equal(pages,2);assert.equal(result.projects.length,1);
 });
 test('summary skips headings, badges and preserves readable link labels',()=>assert.equal(summary('# Title\n\n![badge](x)\n\nA **useful** [tool](https://example.com).','fallback'),'A useful tool.'));
+
+test('cached content is removed by privacy policy even when the network fails',async()=>{
+ const {pruneSnapshot}=await import('./sync-github.mjs');
+ const prior={syncedAt:'yesterday',projects:[{repo:'excluded',markdown:'Old source examples'},{repo:'existing',markdown:'Allowed'}]};
+ const safe=pruneSnapshot(prior,config);assert.deepEqual(safe.projects.map(p=>p.repo),['existing']);assert.equal(safe.syncedAt,'yesterday');
+});

@@ -6,7 +6,7 @@ The site syncs public repositories during deployment and daily at 04:23 UTC. Git
 
 Update the README in its own repository to update the expanded portfolio details. Standard Markdown headings, lists, images, tables, and links are supported. Embedded HTML is parsed and sanitized before rendering; scripts and unsafe attributes are removed. Mermaid fences are shown as source, with the GitHub link available for its rendered diagram. Relative links and images resolve against the README's repository and directory. Keep the first prose paragraph short: it supplies the card summary. Existing curated titles and categories remain; new entries use the repository name and the Projects category.
 
-Private repositories are never imported by this sync. Their previously approved descriptions stay in `lib/portfolio-data.ts`, `lib/portfolio-details.ts`, and `lib/repository-guides.ts`. Adding a private repository requires writing a public-safe summary yourself.
+Private repositories are never imported by this sync. Their previously approved descriptions stay in `lib/portfolio-data.ts` and `lib/portfolio-details.ts`. Adding a private repository requires writing a public-safe summary yourself.
 
 For an immediate refresh, open [the deployment workflow](https://github.com/Azka1212/Azka-AI-Developer/actions/workflows/pages.yml), select **Run workflow**, and choose **main**. No extra access token is needed in GitHub Actions. Locally, run `npm run sync:github`; an optional `GITHUB_TOKEN` is used only by the script, never by browser code.
 
@@ -41,3 +41,10 @@ The assistant offers project exploration, a product enquiry, and research collab
 Run `npm run test:sync`, `npx tsc --noEmit`, and `npm run build`. Browser checks cover disclosure controls, project filtering, README rendering, chat keyboard navigation, email draft contents, and mobile overflow.
 
 References: [GitHub README API](https://docs.github.com/en/rest/repos/contents#get-a-repository-readme), [workflow schedules](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule), [Markdown security](https://github.com/remarkjs/react-markdown#security).
+
+
+## Public/private split
+
+Public project code is limited to reasoning-code, SAC-Traid, Labyrinth-Game-Using-Prolog, Swift-iOS, and Pose_Project_API. The portfolio and profile repositories also remain public. Other listed projects retain their public-safe descriptions without code links or setup instructions.
+
+The `exclude` list blocks private projects from synchronization, even if they later receive the portfolio topic. Cached snapshots are pruned against this list before fallback publication. Create future business and client repositories as private; this site does not change repository visibility automatically.

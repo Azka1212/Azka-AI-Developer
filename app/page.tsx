@@ -23,7 +23,6 @@ import { projects, githubProjects, lastGithubSync } from "@/lib/project-catalog"
 import dynamic from "next/dynamic";
 import ConsultationChat from "@/components/portfolio/consultation-chat";
 import LearningResources from "@/components/portfolio/learning-resources";
-import { repositoryGuides } from "@/lib/repository-guides";
 import { asset } from "@/lib/assets";
 import { socials, papers, interests } from "@/lib/portfolio-data";
 import {
@@ -529,7 +528,6 @@ export default function Portfolio() {
                 {results.map((p) => {
                   const detail = projectDetails[p.title];
                   const githubRepo = !p.private && githubProjects.find(repo => repo.repo === p.repo);
-                  const guide = repositoryGuides[p.title];
                   const isOpen = openProjects.includes(p.title);
                   const id = `project-${projects.indexOf(p)}`;
                   return (
@@ -580,25 +578,6 @@ export default function Portfolio() {
                             </div>
                           )}
                         </dl>}
-                        {!githubRepo && guide && (
-                          <div className="repository-guide">
-                            <p className="repo-status"><span className="small-label">Repository status</span>{guide.status}</p>
-                            <h3>How it works</h3>
-                            <ol className="project-flow">{guide.flow.map((step) => <li key={step}>{step}</li>)}</ol>
-                            <details className="setup-guide">
-                              <summary>Explore the code &amp; setup</summary>
-                              <h4>Key files</h4>
-                              {guide.files.length ? <ul className="repo-files">{guide.files.map((file) => <li key={file.path}><Out href={file.url}>{file.path}</Out></li>)}</ul> : <p>This repository currently contains only a README.</p>}
-                              {p.private && <p className="repo-access">Repository access is required to open these files.</p>}
-                              <h4>Setup and use</h4>
-                              {guide.setup.split(/(```[\s\S]*?```)/g).filter(Boolean).map((block, i) => block.startsWith("```") ? <pre key={i}><code>{block.replace(/^```[^\n]*\n/, "").replace(/```$/, "").trim()}</code></pre> : <p key={i}>{block.split(/(`[^`]+`)/g).map((part, j) => part.startsWith("`") ? <code key={j}>{part.slice(1, -1)}</code> : part)}</p>)}
-                              <h4>Current limits</h4>
-                              <p>{guide.notes}</p>
-                              <div className="guide-references"><Out href={guide.readme}>Full repository guide</Out>{guide.links.map((link) => <Out key={link.url} href={link.url}>{link.label}</Out>)}</div>
-                            </details>
-                            {p.repo === "reasoning-code" && <figure className="research-preview"><a href="https://github.com/Azka1212/reasoning-code/blob/main/AAAI/Diagram3.png" target="_blank" rel="noreferrer"><img src={asset("/research/reasoning-overview.png")} alt="Experiment diagram from When Reasoning Collapses" loading="lazy" /></a><figcaption>Experiment overview from When Reasoning Collapses. Open the paper or repository for the full analysis.</figcaption></figure>}
-                          </div>
-                        )}
                       </div>
                       <div className="project-links">
                         <span>
@@ -613,12 +592,10 @@ export default function Portfolio() {
                             "No public repository linked"
                           )}
                         </span>
-                        {p.repo && (
+                        {p.repo && !p.private && (
                           <Out href={`https://github.com/Azka1212/${p.repo}`}>
                             <Github size={14} aria-hidden="true" />
-                            {p.private
-                              ? "Repository · access required"
-                              : "GitHub code"}
+                            GitHub code
                           </Out>
                         )}
                         {papers

@@ -4,6 +4,12 @@
   "include": [
     "reasoning-code",
     "SAC-Traid",
+    "Pose_Project_API",
+    "Swift-iOS",
+    "Labyrinth-Game-Using-Prolog",
+    "Azka-AI-Developer"
+  ],
+  "exclude": [
     "BOT",
     "CodeAI",
     "PTSD-Prediction-Tool",
@@ -11,15 +17,16 @@
     "Story-Generated",
     "Quiz-Generated",
     "Django-RestfulAPI-Gen-AI",
-    "Pose_Project_API",
-    "Swift-iOS",
+    "Skin-Treatment-Visualizer-Using-Stable-Diffusion",
+    "Pose_Project_Week4",
     "PTSD-Mobile-Application",
-    "Labyrinth-Game-Using-Prolog",
+    "agridirect-mvp",
     "FYP",
     "DATA-Analytics",
+    "ML-Projects",
     "Python",
     "Projects",
-    "Azka-AI-Developer"
-  ],
-  "exclude": []
+    "IOT",
+    "MENAML-content"
+  ]
 }

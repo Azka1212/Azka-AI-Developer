@@ -26,49 +26,56 @@ export const projects: Project[] = [
     "category": "Generative AI",
     "description": "A specialty-aware medical chatbot API. A request contains a user identifier, a question, and a selected specialty; the response contains generated text.",
     "stack": "Python · FastAPI · Pydantic · OpenAI SDK",
-    "repo": "BOT"
+    "repo": "BOT",
+    "private": true
   },
   {
     "title": "AI Code Assistant",
     "category": "Generative AI",
     "description": "A Django REST API for generating, explaining, converting, and debugging code, with additional image and document input workflows.",
     "stack": "Python · Django REST Framework · OpenAI SDK · Pillow · Tesseract",
-    "repo": "CodeAI"
+    "repo": "CodeAI",
+    "private": true
   },
   {
     "title": "PTSD Prediction Tool",
     "category": "Research",
     "description": "A student project combining a Django interface with PTSD classification experiments. The committed model.py trains a classifier from structured CSV columns; the original project proposal also discussed text-based prediction.",
     "stack": "Python · Django · pandas · scikit-learn · imbalanced-learn",
-    "repo": "PTSD-Prediction-Tool"
+    "repo": "PTSD-Prediction-Tool",
+    "private": true
   },
   {
     "title": "SOP Generator",
     "category": "Generative AI",
     "description": "A Django application that drafts a statement of purpose from an applicant’s background, university choice, course, and reasons for applying. The source is distributed inside SOPProject2.zip.",
     "stack": "Python · Django · OpenAI SDK · PyMuPDF",
-    "repo": "SOP-Generator"
+    "repo": "SOP-Generator",
+    "private": true
   },
   {
     "title": "Creative Story Generator",
     "category": "Generative AI",
     "description": "An interactive command-line story generator that accepts the reader’s age, genre, and story idea. It supports short stories and chapter-by-chapter longer stories.",
     "stack": "Python · OpenAI SDK · requests",
-    "repo": "Story-Generated"
+    "repo": "Story-Generated",
+    "private": true
   },
   {
     "title": "Quiz Generator",
     "category": "Generative AI",
     "description": "A placeholder repository for a planned quiz-generation application. The current tree does not contain a working quiz generator.",
     "stack": "Planned Django application",
-    "repo": "Quiz-Generated"
+    "repo": "Quiz-Generated",
+    "private": true
   },
   {
     "title": "Generative AI REST APIs",
     "category": "Generative AI",
     "description": "An incomplete Django project snapshot associated with generative quiz APIs. It includes a management entry point, dependencies, and sample quiz output files.",
     "stack": "Python · Django · OpenAI SDK",
-    "repo": "Django-RestfulAPI-Gen-AI"
+    "repo": "Django-RestfulAPI-Gen-AI",
+    "private": true
   },
   {
     "title": "Skin Treatment Visualizer",
@@ -105,7 +112,8 @@ export const projects: Project[] = [
     "category": "Mobile",
     "description": "An Android student application with account screens, a questionnaire, result/suggestion screens, and score visualizations.",
     "stack": "Java · Android · Firebase Auth/Database · MPAndroidChart",
-    "repo": "PTSD-Mobile-Application"
+    "repo": "PTSD-Mobile-Application",
+    "private": true
   },
   {
     "title": "iOS ML Classifier",
@@ -157,14 +165,16 @@ export const projects: Project[] = [
     "category": "Research",
     "description": "A Django hospital-management and PTSD-questionnaire student project with separate administrator, doctor, and patient flows.",
     "stack": "Python · Django · scikit-learn · pandas · SQLite",
-    "repo": "FYP"
+    "repo": "FYP",
+    "private": true
   },
   {
     "title": "Data Analytics",
     "category": "Learning & experiments",
     "description": "A repository containing a Power BI coursework report.",
     "stack": "Power BI Desktop",
-    "repo": "DATA-Analytics"
+    "repo": "DATA-Analytics",
+    "private": true
   },
   {
     "title": "Machine Learning Projects",
@@ -179,14 +189,16 @@ export const projects: Project[] = [
     "category": "Learning & experiments",
     "description": "A placeholder for Python learning material. The current repository contains only a README.",
     "stack": "Python learning notes",
-    "repo": "Python"
+    "repo": "Python",
+    "private": true
   },
   {
     "title": "Applied Project Collection",
     "category": "Learning & experiments",
     "description": "A collection of smaller projects and learning notebooks for medical-image segmentation, specialty-aware chat, and serial/parallel text processing.",
     "stack": "Python · MONAI · PyTorch · Jupyter · multiprocessing",
-    "repo": "Projects"
+    "repo": "Projects",
+    "private": true
   },
   {
     "title": "Smart Bulb Control",

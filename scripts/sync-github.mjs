@@ -9,6 +9,9 @@ export function summary(markdown, fallback) {
   const plain = (text || fallback || 'Explore the project and its documentation.').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*`_]/g, '').replace(/\s+/g, ' ').trim();
   return plain.length <= 220 ? plain : plain.slice(0, 217).replace(/\s+\S*$/, '') + '…';
 }
+export function pruneSnapshot(snapshot, config) {
+  return {...snapshot, projects: snapshot.projects.filter(p => !config.exclude.includes(p.repo))};
+}
 export async function collect(config, previous, api) {
   const repos = [];
   for (let page = 1; ; page++) {
@@ -43,6 +46,7 @@ async function main() {
   const destination = new URL('../lib/github-projects.json', import.meta.url);
   let previous = {syncedAt:'',projects:[]};
   try { previous = JSON.parse(await readFile(destination)); } catch {}
+  previous = pruneSnapshot(previous, config);
   const api = async path => {
     const headers = {Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
     if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
@@ -58,6 +62,7 @@ async function main() {
     console.log(`Synced ${snapshot.projects.length} public repositories.`);
   } catch (error) {
     if (!previous.syncedAt) throw error;
+    await writeFile(destination, JSON.stringify(previous,null,2)+"\n");
     console.warn(`GitHub sync unavailable; keeping snapshot from ${previous.syncedAt}.`);
   }
 }
