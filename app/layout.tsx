@@ -4,8 +4,8 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Azka Portfolio',
-  description: '',
+  title: 'Azka Ikramullah — AI Researcher & Generative AI Engineer',
+  description: 'AI researcher and generative AI engineer studying LLM robustness, reasoning, and AI safety. Explore research, selected projects, and experience by Azka Ikramullah.',
   generator: '',
 }
 
